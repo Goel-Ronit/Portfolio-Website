@@ -9,12 +9,9 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
-        <li>JavaScript</li>
-        <li>React</li>
+        <li>HTML, CSS & Javascript</li>
+        <li>ReactJS</li>
+        <li>NextJS</li>
       </ul>
     ),
   },
@@ -23,8 +20,8 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li>Delhi Technological University</li>
+        <li>Mother Divine Public School</li>
       </ul>
     ),
   },
@@ -33,8 +30,8 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>The Complete 2023 Web Development Bootcamp</li>
+        <li>Mastering Data Structures And Algorithms</li>
       </ul>
     ),
   },
@@ -57,12 +54,15 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+          I am a <b>full-stack web developer</b> and a tech guy. I studied at Mother Divine Public School in the science department. I passed school in 2021 and am pursuing a BTech in Software Engineering at Delhi Technological University. 
+          <br></br>
+          I learned web development in my first year. I know how to work with the latest technologies on the web like <b>NextJs, ReactJS, MongoDB, Tailwind CSS, and some other libraries like Next UI, and Next Auth</b>. I love new technologies and like to learn about them.
+          <br></br>
+          I excel in problem-solving, having solved over 2,500 questions on Data Structures and Algorithms on the Geeks for Geeks platform, where I am ranked 12th globally. I am among the top 8% of coders on CodeStudio, having earned Specialist Badges in 14 topics and attaining the Master level. 
+          <br></br>
+          Additionally, I am a 3 ⭐ coder on CodeChef with a rating of 1640 and hold a contest rating of 1725 on Leetcode, where I am ranked 324th globally, having solved over 2,000 questions.
+          <br></br>
+          Other than coding I know how to swim and travelling is my favourite hobby.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
