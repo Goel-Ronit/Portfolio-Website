@@ -1,60 +1,64 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import ProjectCard from "./ProjectCard";
-import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
 
 const projectsData = [
   {
     id: 1,
-    title: "Travel Online",
-    description: "Website made for those who love travelling.",
-    image: "/images/projects/4.jpg",
+    title: "TaskNest",
+    description: "TaskNest is a note-taking application build with Next.js, React.js, Convex, and Blocknote.",
+    image: "/images/projects/1.png",
     tag: ["All", "Web"],
+    gitUrl: "https://github.com/Goel-Ronit/Web-Development-8",
+    previewUrl: "https://tasknest-eight.vercel.app/",
+  },
+  {
+    id: 2,
+    title: "Board (Applications For Collaborators)",
+    description: "Board is a real-time collaborative whiteboard application, designed for team brainstorming and project planning.",
+    image: "/images/projects/2.png",
+    gitUrl: "https://github.com/Goel-Ronit/Web-Development-7",
+    previewUrl: "https://board-colab.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "Travel Online",
+    description: "Application for users to book or list properties with seamless authentication and filtering features, built using React.js, Next.js, and MongoDB.",
+    image: "/images/projects/3.jpg",
     gitUrl: "https://github.com/Goel-Ronit/Web-Development-6",
     previewUrl: "https://travel-online.vercel.app/",
   },
   {
-    id: 2,
-    title: "E-commerce Application",
-    description: "Website Made By Developer For Those Who Love Shopping.",
-    image: "/images/projects/1.png",
-    tag: ["All", "Web"],
+    id: 4,
+    title: "SwiftCart",
+    description: "Swiftcart is a full-stack e-commerce platform built with React.js, Next.js, MongoDB, Prisma, and NextAuth.",
+    image: "/images/projects/4.png",
     gitUrl: "https://github.com/Goel-Ronit/WebDevelopment-5",
     previewUrl: "https://swiftcart-mauve.vercel.app/",
   },
   {
-    id: 3,
+    id: 5,
     title: "Recipe Finder App",
-    description: "A Web App Built On HTML, CSS and Javascript in which you can find recipes of dishes you want to make.",
-    image: "/images/projects/2.jpeg",
-    tag: ["All", "Web"],
+    description: "A Web App Built On HTML, CSS and Javascript to discover delicious recipes tailored to your ingredients.",
+    image: "/images/projects/5.jpeg",
     gitUrl: "https://github.com/Goel-Ronit/WebDevelopment-4",
     previewUrl: "https://goel-ronit.github.io/WebDevelopment-4/",
   },
   {
-    id: 4,
+    id: 6,
     title: "Snake Game",
     description: "A Web Game Built On HTML, CSS and Javascript.",
-    image: "/images/projects/3.png",
-    tag: ["All", "Web"],
+    image: "/images/projects/6.png",
     gitUrl: "https://github.com/Goel-Ronit/WebDevelopment-2",
     previewUrl: "https://goel-ronit.github.io/WebDevelopment-2/",
   },
 ];
 
 const ProjectsSection = () => {
-  const [tag, setTag] = useState("All");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  const handleTagChange = (newTag) => {
-    setTag(newTag);
-  };
-
-  const filteredProjects = projectsData.filter((project) =>
-    project.tag.includes(tag)
-  );
 
   const cardVariants = {
     initial: { y: 50, opacity: 0 },
@@ -66,20 +70,8 @@ const ProjectsSection = () => {
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         My Projects
       </h2>
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-        <ProjectTag
-          onClick={handleTagChange}
-          name="All"
-          isSelected={tag === "All"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
-        />
-      </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((project, index) => (
+        {projectsData.map((project, index) => (
           <motion.li
             key={index}
             variants={cardVariants}
